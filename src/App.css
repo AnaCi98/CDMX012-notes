@@ -1,0 +1,37 @@
+@media screen and (max-width: 480px) {
+body {
+  background-color: #EBD5EE;
+}
+.container-login{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40%;
+}
+.logoTK{
+  position: relative;
+  left: 12%;
+  width: 40vh;
+}
+.button-Login-Google{
+  background-color: white;
+  color: #292929;
+  font-family: inter;
+  font-size: 1.08rem;
+  padding-left: 45px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: white solid;
+  border-radius: 5px;
+}
+.container-button-login{
+  position: relative;
+  left: 5%;
+}
+.logoGoogle{
+  position: relative;
+  left: -86%;
+  width: 30px;
+}
+}

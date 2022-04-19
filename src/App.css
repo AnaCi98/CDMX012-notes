@@ -2,16 +2,16 @@
 body {
   background-color: #EBD5EE;
 }
+/* Aqui comienza el estilo de la vista principal */
 .container-login{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-top: 40%;
+  align-items: center; 
+  margin-top: 28%; 
+  row-gap: 19px;
 }
 .logoTK{
-  position: relative;
-  left: 12%;
-  width: 40vh;
+  width: 25vh;
 }
 .button-Login-Google{
   background-color: white;
@@ -25,18 +25,65 @@ body {
   border: white solid;
   border-radius: 5px;
 }
-.container-button-login{
+/* .container-button-login{
   position: relative;
   left: 5%;
-}
+} */
 .logoGoogle{
-  position: relative;
-  left: -86%;
-  width: 30px;
+  width: 5vh;
 }
+.form-login{
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  row-gap: 15px;
+  
+} 
+.data-login{
+  width: 250px;
+  background-color: white;
+  color: #292929;
+  font-family: inter;
+  font-size: 1.08rem;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  border: white solid;
+  border-radius: 5px;
+}
+.data-login:focus{
+  outline: none;
+  border: 3px solid #5e327bd7;
+
+}
+.button-login{
+  background-color: #995fc0d7;
+  color: white ;
+  font-family: inter;
+  font-size: 1.08rem;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: #5e327bd7 solid;
+  border-radius: 5px;
+}
+/* Aqui comienza el estilo del muro */
 p{
-  color: pink;
+  color: black;
+font-size: 1.1rem
+;}
+.send-view-register{
+  color: #962adf;
+
 }
+.form-new-account{
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
 }
 @media screen and (min-width: 480px) {
   p{

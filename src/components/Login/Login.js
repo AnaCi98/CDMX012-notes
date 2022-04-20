@@ -1,6 +1,6 @@
 import ButtonGoogle from './ButtonGoogle';
 import FormLogin from './FormLogin';
-import Logo from './Logo';
+import Logo from '../Logo';
 import NewAccount from './NewAccount';
 
 function Login() {

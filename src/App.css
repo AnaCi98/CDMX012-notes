@@ -55,7 +55,6 @@ body {
 .data-login:focus{
   outline: none;
   border: 3px solid #5e327bd7;
-
 }
 .button-login{
   background-color: #995fc0d7;
@@ -72,10 +71,11 @@ body {
 /* Aqui comienza el estilo del muro */
 p{
   color: black;
-font-size: 1.1rem
+font-size: 1.1rem;
 ;}
 .send-view-register{
   color: #962adf;
+  font-weight: bold; 
 
 }
 .form-new-account{
@@ -83,7 +83,31 @@ font-size: 1.1rem
   flex-direction: column;
   align-items: center; 
 }
-
+.button-register{
+  background-color: #995fc0d7;
+  color: white ;
+  font-family: inter;
+  font-size: 1.08rem;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: #5e327bd7 solid;
+  border-radius: 5px;
+}
+.form-register{
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  row-gap: 20px;
+}
+.container-register{
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  margin-top: 28%; 
+  row-gap: 25px;
+}
 }
 @media screen and (min-width: 480px) {
   p{

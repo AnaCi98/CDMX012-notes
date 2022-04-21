@@ -1,17 +1,16 @@
-import { Link } from 'react-router-dom';
+import {loginGoogle} from '../../firebase/firebaseAuth';
+
 
 function ButtonGoogle() {
     return (
         <div className='container-button-login'>
-        <button className='button-Login-Google'>
-            <Link to="/home">
-                Inicia sesion con Google
-            </Link>
-        </button>
-        <img className='logoGoogle'
+         <img className='logoGoogle'
         src={require('../../images/logoGoogle.png')}
         alt = 'logo of Google'
         />
+        <button className='button-Login-Google' onClick={loginGoogle}>
+                Inicia sesion con Google
+        </button>
         </div>
     );
 }

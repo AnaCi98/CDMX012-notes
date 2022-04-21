@@ -1,0 +1,266 @@
+/* MOBILE */
+@media screen and (max-width: 750px) {
+    body {
+        background-color: #f2def5;
+      }
+    .container-login{
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        margin-top: 20%; 
+        row-gap: 25px;
+      }
+      .button-Login-Google{
+        position: relative;
+        right: 5%; 
+        background-color: white;
+        color: #292929;
+        font-family: inter;
+        font-size: 1.08rem;
+        padding-left: 45px;
+        padding-right: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border: white solid;
+        border-radius: 5px;
+      }
+
+      .logoGoogle{
+        position: relative;
+        left: 9%;
+        top: 1.5vh;
+        width: 4.2vh;
+        z-index: 10;
+      }
+      .form-login{
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        row-gap: 15px;
+        
+      } 
+      .data-login{
+        width: 250px;
+        background-color: white;
+        color: #292929;
+        font-family: inter;
+        font-size: 1.08rem;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        border: white solid;
+        border-radius: 5px;
+      }
+      .data-login:focus{
+        outline: none;
+        border: 3px solid #5e327bd7;
+      }
+      .button-login{
+        position: relative;
+        top: 1vh;
+        background-color: #995fc0d7;
+        color: white ;
+        font-family: inter;
+        font-size: 1.08rem;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border: #5e327bd7 solid;
+        border-radius: 5px;
+      }
+      .p-have-account{
+        position: relative;
+        bottom: 3vh;
+        font-size: 1.1rem;
+      }
+      .p-send-view-register{
+        position: relative;
+        bottom: 7vh;
+        color: #962adf;
+        font-weight: bold; 
+        font-size: 1.4rem;
+      }
+      .form-new-account{
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+      }
+}
+
+/* TABLET */
+@media screen and (min-width: 750px) {
+    .container-login{
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        margin-top: 15%; 
+        row-gap: 42px;
+      }
+      .button-Login-Google{
+        position: relative;
+        right: 5%;
+        background-color: white;
+        color: #292929;
+        font-family: inter;
+        font-size: 1.4rem;
+        padding-left: 65px;
+        padding-right: 10px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        border: white solid;
+        border-radius: 5px;
+      }
+      .logoGoogle{
+        position: relative;
+        left: 10.1%;
+        top: 1.5vh;
+        width: 5vh;
+        z-index: 10;
+      }
+      .form-login{
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        row-gap: 2.2vh;
+        
+      } 
+      .data-login{
+        width: 40vh;
+        height: 3.5vh;
+        background-color: white;
+        color: #292929;
+        font-family: inter;
+        font-size: 1.3rem;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        border: white solid;
+        border-radius: 5px;
+      }
+      .data-login:focus{
+        outline: none;
+        border: 3px solid #5e327bd7;
+      }
+      .button-login{
+        position: relative;
+        top: 1.2vh;
+        background-color: #995fc0d7;
+        color: white ;
+        font-family: inter;
+        font-size: 1.4rem;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border: #5e327bd7 solid;
+        border-radius: 5px;
+      }
+      p{
+        color: black;
+      font-size: 1.1rem;
+      }
+      .p-have-account{
+        position: relative;
+        bottom: 3vh;
+        font-size: 1.4rem;
+      }
+      .p-send-view-register{
+        position: relative;
+        bottom: 5vh;
+        color: #962adf;
+        font-weight: bold; 
+        font-size: 1.6rem;
+      }
+      .form-new-account{
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+      }
+}
+/* DESKTOP */
+@media screen and (min-width: 850px) {
+  .container-login{
+    background-color: white;
+    position: absolute;
+    left: 30%;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    margin-top: 1%; 
+    row-gap: 25px;
+    border: 1px solid #5e327bd7;
+  }
+  .button-Login-Google{
+    background-color: white;
+    color: #292929;
+    font-family: inter;
+    font-size: 1.08rem;
+    padding-left: 45px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 2px solid #5e327bd7;
+    border-radius: 9px;
+   }
+    .logoGoogle{
+      position: absolute;
+      left: 25.5%;
+      top: 62.5%;
+      width: 5vh;
+    }
+    .form-login{
+      display: flex;
+      flex-direction: column;
+      align-items: center; 
+      row-gap: 15px;
+      
+    } 
+    .data-login{
+      width: 250px;
+      background-color: white;
+      color: #292929;
+      font-family: inter;
+      font-size: 1.08rem;
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-top: 6px;
+      padding-bottom: 6px;
+      border: 1px solid #5e327bd7;
+      border-radius: 5px;
+    }
+    .data-login:focus{
+      outline: none;
+      border: 3px solid #5e327bd7;
+    }
+    .button-login{
+      background-color: #995fc0d7;
+      color: white ;
+      font-family: inter;
+      font-size: 1.08rem;
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      border: #5e327bd7 solid;
+      border-radius: 5px;
+    }
+    .p-have-account{
+      position: relative;
+      bottom: 3vh;
+      font-size: 1.1rem;
+    }
+    .p-send-view-register{
+      color: #962adf;
+      font-weight: bold; 
+    
+    }
+    .form-new-account{
+      display: flex;
+      flex-direction: column;
+      align-items: center; 
+    }
+}

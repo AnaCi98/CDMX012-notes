@@ -2,15 +2,18 @@ import ButtonGoogle from './ButtonGoogle';
 import FormLogin from './FormLogin';
 import Logo from '../Logo';
 import NewAccount from './NewAccount';
+import './Login.css';
 
 function Login() {
     return (
-    <div className='container-login'>
-        <Logo/>
-        <FormLogin/>
-        <ButtonGoogle/>
-        <NewAccount/>
-    </div>
+    <body style={{ backgroundColor : '#f2def5'}}>
+        <div className='container-login'>
+            <Logo/>
+            <FormLogin/>
+            <ButtonGoogle/>
+            <NewAccount/>
+        </div>
+    </body>
     );
 }
 

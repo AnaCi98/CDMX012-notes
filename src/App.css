@@ -29,21 +29,6 @@
   row-gap: 25px;
 }
 
-.container-home{
-  min-height: 100vh; 
-  background-color: white;
-  margin: 0;
-  display: flex;
-  flex-direction: row;
-  column-gap: 20px;
-}
-.logoSignOut{
-  margin-top: 5%;
-  margin-left: 5%;
-  width: 8vh;
-  height: 6vh;
-}
-
 }
 
 /* TABLET */
@@ -86,24 +71,7 @@
     margin-top: 28%; 
     row-gap: 25px;
   }
-  
-  .container-home{
-    position: absolute;
-    width: 99%;
-    height: 98%;
-    margin: 0;
-    background-color: white;
-    display: flex;
-    flex-direction: row;
-    column-gap: 20px;
-  }
-  .logoSignOut{
-    margin-top: 5%;
-    margin-left: 5%;
-    width: 8vh;
-    height: 6vh;
-  }
-  
+   
   }
 
 /* DESKTOP */
@@ -147,21 +115,6 @@
     row-gap: 25px;
     padding-top: 2%;
     border: 1px solid #5e327bd7;
-  }
-  
-  .container-home{
-    position: absolute;
-    width: 99%;
-    height: 98%;
-    margin: 0;
-    background-color: white;
-    display: flex;
-    flex-direction: row;
-    column-gap: 20px;
-  }
-  .logoSignOut{
-    width: 15vh;
-    height: 12vh;
   }
   
 }

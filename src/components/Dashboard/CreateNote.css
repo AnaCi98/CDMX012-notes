@@ -1,0 +1,19 @@
+/* MOBILE */
+@media screen and (max-width: 750px) {
+
+}
+    
+    /* TABLET */
+@media screen and (min-width: 750px) {
+.create-note{
+    border: 2px solid black;
+    margin-left: 6%;
+    margin-right: 6%;
+    margin-top: 4%;
+    padding-left: 4%;
+}
+}
+    
+ /* DESKTOP */
+@media screen and (min-width: 850px) {
+}

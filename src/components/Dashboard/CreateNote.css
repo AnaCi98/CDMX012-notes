@@ -23,12 +23,14 @@
     border: none;
     font-size: 1.5rem;
     outline: none;
+    width: 400px;
 }
 
 .noteContent{
     border: none;
     outline: none;
     font-size: 1.4rem;
+    width: 650px;
 }
 .icons{
     display: flex;

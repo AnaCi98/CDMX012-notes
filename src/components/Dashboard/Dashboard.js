@@ -1,38 +1,34 @@
-import React from 'react';
-import { signOut } from "firebase/auth";
-import auth from '../../firebase/firebaseAuth';
+import { useAuth } from '../../context/authContext';
 import './Dashboard.css';
-import CreateNote from './CreateNote';
-
+import { Link, useNavigate } from 'react-router-dom';
 
 // import { Link } from 'react-router-dom';
 
 function Dashboard() {
-  // const [ displayName, setName ] = useState('');
 
-  const user = auth.currentUser;
-  // if (user !== null) {
-  //   setName(user.displayName)
-  // }
+  const navigate = useNavigate();
+    const {getOutSession} = useAuth();
 
-
-    const getOutSession = () => {
-      signOut(auth).then(() => {
-        console.log('si jalo')
-            })
+    const handleSignOut = async () => {
+        await getOutSession()
+        navigate('/')
     }
 
     return (
         <div className='container-home'>
           <div className='nav-top'>
           {/* <Link to="/" style={{ textDecoration: 'none', color: 'white'}}> */}
-            <img onClick={getOutSession} className='logoSignOut'
+            <img onClick={handleSignOut} className='logoSignOut'
         src={require('../../images/signout.png')}
         alt = 'logo of signout'/>
           {/* </Link> */}
-            <p className='displayName'>{user.displayName}</p>
+            <p className='displayName'>Ana Guadalupe Cifuentes Sanchez</p>
           </div>
-          <CreateNote/>
+          <Link to="/note" style={{ textDecoration: 'none'}}>
+          <div className='create-note'>
+            <p>Crear nota</p>
+          </div>
+          </Link>
         </div>
     );
 }

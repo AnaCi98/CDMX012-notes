@@ -51,6 +51,15 @@
 margin-top: 3%;
 font-size: 1.3rem;
 }
+.create-note{
+border: 2px solid black;
+margin-left: 6%;
+margin-right: 6%;
+margin-top: 4%;
+padding-left: 4%;
+cursor: pointer;
+
+}
 }
 
 /* DESKTOP */

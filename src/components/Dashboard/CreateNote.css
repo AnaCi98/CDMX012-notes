@@ -5,12 +5,44 @@
     
     /* TABLET */
 @media screen and (min-width: 750px) {
-.create-note{
-    border: 2px solid black;
-    margin-left: 6%;
-    margin-right: 6%;
-    margin-top: 4%;
-    padding-left: 4%;
+.new-note{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    background-color: white;
+        border: 2px solid black;
+        margin-left: 6%;
+        margin-right: 6%;
+        margin-top: 4%;
+        padding-left: 4%;
+        padding-top: 4%;
+        padding-bottom: 4%;
+        cursor: pointer;
+    }
+.tittle{
+    border: none;
+    font-size: 1.5rem;
+    outline: none;
+}
+
+.noteContent{
+    border: none;
+    outline: none;
+    font-size: 1.4rem;
+}
+.icons{
+    display: flex;
+    flex-direction: row;
+    column-gap: 20px;
+}
+.newImage{
+    width: 6vh;
+}
+.colorNote{
+    width: 6vh;
+}
+.deleteNote{
+    width: 6vh; 
 }
 }
     

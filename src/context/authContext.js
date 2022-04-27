@@ -17,7 +17,7 @@ export function AuthProvider ({children}) {
     const loginGoogle = () => {
         const providerGoogle = new GoogleAuthProvider();
         return signInWithPopup(auth, providerGoogle);
-      };
+    };
 
     const getOutSession = () => signOut(auth);
 

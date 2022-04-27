@@ -1,6 +1,8 @@
 import { useAuth } from '../../context/authContext';
 import './Dashboard.css';
 import { Link, useNavigate } from 'react-router-dom';
+import Notes from './Notes';
+
 
 // import { Link } from 'react-router-dom';
 
@@ -12,7 +14,6 @@ function Dashboard() {
         await getOutSession()
         navigate('/')
     }
-
     return (
         <div className='container-home'>
           <div className='nav-top'>
@@ -28,6 +29,7 @@ function Dashboard() {
             <p>Crear nota</p>
           </div>
           </Link>
+          <Notes/>
         </div>
     );
 }

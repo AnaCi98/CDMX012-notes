@@ -10,22 +10,14 @@ import PrivateRoute from './PrivateRoutes';
 function App() {
   return (
   <BrowserRouter>
-  <AuthProvider>
-  <Routes>
-  <Route path='/' element={<Login/>}/>
-  <Route path='/home' element={
-  <PrivateRoute>
-      <Dashboard/>
-  </PrivateRoute>
-}/>
-  <Route path='/note' element={
-      <PrivateRoute>
-  <CreateNote/>
-  </PrivateRoute>
-  }/>
-  <Route path='/register' element={<Register/>}/>
-  </Routes>
-  </AuthProvider>
+    <AuthProvider>
+      <Routes>
+        <Route path='/' element={<Login/>}/>
+        <Route path='/home' element={<PrivateRoute><Dashboard/></PrivateRoute>}/>
+        <Route path='/note' element={<PrivateRoute><CreateNote/></PrivateRoute>}/>
+        <Route path='/register' element={<Register/>}/>
+      </Routes>
+    </AuthProvider>
   </BrowserRouter>
   );
 }

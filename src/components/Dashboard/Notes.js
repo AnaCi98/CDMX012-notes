@@ -6,7 +6,7 @@ import {db} from '../../firebase/firebaseConfig';
 
 
 function Notes() {
-  const [notes, setNotes] = useState({});
+  const [notes, setNotes] = useState([]);
 
     useEffect(() => {
       // const renderNotes =  () => {
@@ -22,9 +22,13 @@ function Notes() {
     }, [notes]);
 
 
-    return <article className="notes">
-    <p onClick={() => console.log(notes)}>titulo</p>
-    <p>Contenido</p>
-    </article>
+    return <section>
+    {notes.map((note) => 
+      <div className="notes">
+        <p>{note.title}</p>
+        <p>{note.content}</p>
+      </div>
+    )}
+    </section>
 }
 export default Notes;

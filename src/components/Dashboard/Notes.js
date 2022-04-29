@@ -1,12 +1,17 @@
 import './Notes.css';
 import { useEffect, useState } from 'react';
-import { collection, query, onSnapshot } from "firebase/firestore";
+import { collection, query, onSnapshot, deleteDoc, doc } from "firebase/firestore";
 import {db} from '../../firebase/firebaseConfig';
 
 
 
 function Notes() {
   const [notes, setNotes] = useState([]);
+
+  const deleteNote = async (id) => {
+    await deleteDoc(doc(db, "notes", id));
+  }
+  
 
     useEffect(() => {
       // const renderNotes =  () => {
@@ -25,6 +30,7 @@ function Notes() {
     return <section>
     {notes.map((note) => 
       <div className="notes">
+      <p onClick={() => { deleteNote(note.id) }}>borrar</p>
         <p>{note.title}</p>
         <p>{note.content}</p>
       </div>

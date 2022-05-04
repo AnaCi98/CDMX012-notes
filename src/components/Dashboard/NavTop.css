@@ -1,0 +1,72 @@
+/* MOBILE */
+@media screen and (max-width: 750px) {
+
+}
+
+    /* TABLET */
+@media screen and (min-width: 750px) {
+.nav-top{
+        background-color: #f3d7f8;
+        box-shadow: 0 0 15px 10px #f3d7f8;
+        height: 12vh;
+        display: flex;
+        column-gap: 49vh;
+        padding-left: 3.3vh;
+}
+ .logoSignOut{
+        margin-top: 4vh;
+        width: 5vh;
+        height: 4vh;
+}
+ .displayName{
+margin-top: 4vh;
+font-size: 1.3rem;
+}
+.logoTop{
+    margin-top: 2vh;
+    width: 10vh;
+    height: 9vh;
+}
+.container-userData{
+    background-color: #f6eaf8;
+    position: absolute;
+    top: 10%;
+left: 17%;    
+width: 500px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #715b75b8;
+    border-radius: 30px;
+    box-shadow: 0 0 15px 1px #715b75b8;
+}
+.sectionLogOut{
+    display: flex;
+    column-gap: 1.2vh;
+}
+.textSignOut{
+    position: relative;
+    margin-top: 5vh;
+}
+.userDisplayEmail{
+    position: absolute;
+    bottom: 7vh;
+}
+.photoUser{
+    margin-top: 3vh;
+    width: 8vh;
+    height: 7.4vh;
+    border-radius: 50%;
+}
+.closeData{
+    position: absolute;
+    font-size: 1.6rem;
+    background-color: #f6eaf88b;
+    left: 2vh;
+top: -2vh;}
+}
+
+ /* DESKTOP */
+@media screen and (min-width: 850px) {
+}

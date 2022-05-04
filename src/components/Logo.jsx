@@ -1,3 +1,4 @@
+/* eslint-disable global-require */
 function Logo() {
   return (
     <img

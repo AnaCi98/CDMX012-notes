@@ -1,14 +1,14 @@
-import React, { Suspense} from 'react';
+/* eslint-disable linebreak-style */
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 
 // ReactDOM.render(<App/>, document.getElementById('root'))
 const root = ReactDOM.createRoot(document.getElementById('root'));
- root.render(
+root.render(
   <React.StrictMode>
     <Suspense fallback={<p>Cargando...</p>}>
       <App />
     </Suspense>
-  </React.StrictMode>
- );
-
+  </React.StrictMode>,
+);

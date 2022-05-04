@@ -1,3 +1,6 @@
+/* eslint-disable global-require */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import './Notes.css';
 import { useEffect, useState } from 'react';
 import {
@@ -8,12 +11,7 @@ import { db } from '../../firebase/firebaseConfig';
 function Notes() {
   const [notes, setNotes] = useState([]);
 
-  const deleteNote = async (id) => {
-    await deleteDoc(doc(db, 'notes', id));
-  };
-
-  useEffect(() => {
-    // const renderNotes =  () => {
+  const renderNotes = () => {
     const arrayNotes = [];
     const q = query(collection(db, 'notes'));
     onSnapshot(q, (querySnapshot) => {
@@ -22,16 +20,33 @@ function Notes() {
       });
       setNotes(arrayNotes);
     });
-  // };
-  }, [notes]);
+  };
 
+  const deleteNote = async (id) => {
+    await deleteDoc(doc(db, 'notes', id));
+    renderNotes();
+  };
+
+  useEffect(() => {
+    renderNotes();
+  }, []);
+  console.count('componente Note');
   return (
-    <section>
+    <section className="allNotes">
       {notes.map((note) => (
-        <div className="notes">
-          <p onClick={() => { deleteNote(note.id); }}>borrar</p>
-          <p>{note.title}</p>
-          <p>{note.content}</p>
+        <div key={note.id} className="notes">
+          <div className="navTitle">
+            <p className="fontTitle">{note.title}</p>
+            <div className="iconsEdit">
+              <img
+                onClick={() => { deleteNote(note.id); }}
+                className="deleteIcon"
+                src={require('../../images/deleteNote.png')}
+                alt="icon of erase"
+              />
+            </div>
+          </div>
+          <p className="fontContent">{note.content}</p>
         </div>
       ))}
     </section>

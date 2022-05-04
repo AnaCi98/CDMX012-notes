@@ -1,37 +1,33 @@
-import { useAuth } from '../../context/authContext';
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable global-require */
+import { Link } from 'react-router-dom';
 import './Dashboard.css';
-import { Link, useNavigate } from 'react-router-dom';
 import Notes from './Notes';
-
+import NavTop from './NavTop';
 
 // import { Link } from 'react-router-dom';
 
 function Dashboard() {
-  const navigate = useNavigate();
-    const {getOutSession, user} = useAuth();
+  return (
+    <div className="container-home">
+      <NavTop />
+      <Link to="/note" style={{ textDecoration: 'none' }}>
+        <div className="create-note">
+          <p className="addNote">
+            +
+          </p>
 
-    const handleSignOut = async () => {
-        await getOutSession()
-        navigate('/')
-    }
-    return (
-        <div className='container-home'>
-          <div className='nav-top'>
-          {/* <Link to="/" style={{ textDecoration: 'none', color: 'white'}}> */}
-            <img onClick={handleSignOut} className='logoSignOut'
-        src={require('../../images/signout.png')}
-        alt = 'logo of signout'/>
-          {/* </Link> */}
-            <p className='displayName'>{user.displayName}</p>
-          </div>
-          <Link to="/note" style={{ textDecoration: 'none'}}>
-          <div className='create-note'>
-            <p>Crear nota</p>
-          </div>
-          </Link>
-          <Notes/>
+          {/* <img
+            className="addNote"
+            src={require('../../images/addNote.png')}
+            alt="icon of addNote  "
+          /> */}
         </div>
-    );
+      </Link>
+      <Notes />
+    </div>
+  );
 }
 
 export default Dashboard;

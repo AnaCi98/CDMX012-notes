@@ -1,3 +1,5 @@
+/* eslint-disable react/button-has-type */
+/* eslint-disable global-require */
 import './CreateNote.css';
 import { useState } from 'react';
 import { collection, addDoc } from 'firebase/firestore';
@@ -18,8 +20,6 @@ function CreateNote() {
       ...values,
       [name]: val,
     });
-    event.preventDefault();
-    event.stopPropagation();
   };
 
   const submit = async () => {

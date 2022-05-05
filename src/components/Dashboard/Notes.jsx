@@ -1,3 +1,4 @@
+/* eslint-disable react/no-children-prop */
 /* eslint-disable global-require */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
@@ -6,7 +7,11 @@ import { useEffect, useState } from 'react';
 import {
   collection, query, onSnapshot, deleteDoc, doc,
 } from 'firebase/firestore';
+import {
+  Link,
+} from 'react-router-dom';
 import { db } from '../../firebase/firebaseConfig';
+// import EditNotes from './EditNote';
 
 function Notes() {
   const [notes, setNotes] = useState([]);
@@ -44,11 +49,15 @@ function Notes() {
                 src={require('../../images/deleteNote.png')}
                 alt="icon of erase"
               />
+              <Link to={`/editnote${note.id}`}>
+                <p>EDITAR</p>
+              </Link>
             </div>
           </div>
           <p className="fontContent">{note.content}</p>
         </div>
       ))}
+      {/* <Route path="/:id" children={<EditNotes />} /> */}
     </section>
   );
 }

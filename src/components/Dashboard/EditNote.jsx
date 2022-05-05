@@ -1,9 +1,12 @@
 /* eslint-disable global-require */
-import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import { Link, useParams } from 'react-router-dom';
 
-export default function EditNotes(props) {
-  const { name } = props;
-  console.log(name);
+export default function EditNotes() {
+  const { id } = useParams();
+  useEffect(() => {
+    console.log(id);
+  });
   return (
     <div className="new-note">
       <Link to="/home" style={{ textDecoration: 'none' }}>
@@ -38,7 +41,6 @@ export default function EditNotes(props) {
             src={require('../../images/sendNote.png')}
             alt="logo of send note"
           />
-
         </button>
       </div>
     </div>

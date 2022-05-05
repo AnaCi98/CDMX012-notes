@@ -5,7 +5,7 @@
 import './Notes.css';
 import { useEffect, useState } from 'react';
 import {
-  collection, query, onSnapshot, deleteDoc, doc,
+  collection, query, onSnapshot,
 } from 'firebase/firestore';
 import {
   Link,
@@ -27,11 +27,6 @@ function Notes() {
     });
   };
 
-  const deleteNote = async (id) => {
-    await deleteDoc(doc(db, 'notes', id));
-    renderNotes();
-  };
-
   useEffect(() => {
     renderNotes();
   }, []);
@@ -39,23 +34,14 @@ function Notes() {
   return (
     <section className="allNotes">
       {notes.map((note) => (
-        <div key={note.id} className="notes">
-          <div className="navTitle">
-            <p className="fontTitle">{note.title}</p>
-            <div className="iconsEdit">
-              <img
-                onClick={() => { deleteNote(note.id); }}
-                className="deleteIcon"
-                src={require('../../images/deleteNote.png')}
-                alt="icon of erase"
-              />
-              <Link to={`/editnote${note.id}`}>
-                <p>EDITAR</p>
-              </Link>
+        <Link to={`/editnote${note.id}`} style={{ textDecoration: 'none' }}>
+          <div key={note.id} className="notes">
+            <div className="navTitle">
+              <p className="fontTitle">{note.title}</p>
             </div>
+            <p className="fontContent">{note.content}</p>
           </div>
-          <p className="fontContent">{note.content}</p>
-        </div>
+        </Link>
       ))}
       {/* <Route path="/:id" children={<EditNotes />} /> */}
     </section>

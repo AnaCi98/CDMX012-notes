@@ -65,7 +65,6 @@ function CreateNote() {
             submit();
           }}
         >
-          {' '}
           <img
             className="sendNoteIcon"
             src={require('../../images/sendNote.png')}

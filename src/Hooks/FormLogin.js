@@ -1,25 +1,32 @@
-// Este contiene hook para cambiar de estado 
-// import { useState } from 'react'
+// Este contiene hook para cambiar de estado
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import createNote from '../firebase/firebaseAuth';
 
-// const useForm = () => {
-//     const [values, setValues] = useState('');
-//     // const [errors, setErrors] = useState('');
+const useForm = () => {
+  const navigate = useNavigate();
+  const [values, setValues] = useState({});
 
-//     const handleChange = (event) => {
-//         event.persist();
-//         let name = event.target.name;
-//         let val = event.target.value;
-//         setValues({
-//             ...values,
-//             [name]:val,
-//         })
+  const handleChange = (event) => {
+    event.persist();
 
-//     }
-//     return {
-//         values,
-//         // errors,
-//         handleChange
-//     }
-// }
+    const { name } = event.target;
+    const val = event.target.value;
 
-// export default useForm;
+    setValues({
+      ...values,
+      [name]: val,
+    });
+  };
+  const submit = async () => {
+    createNote(values);
+    navigate('/home');
+  };
+
+  return {
+    submit,
+    handleChange,
+  };
+};
+
+export default useForm;

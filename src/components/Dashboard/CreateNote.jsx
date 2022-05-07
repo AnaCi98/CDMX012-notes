@@ -1,39 +1,11 @@
 /* eslint-disable react/button-has-type */
 /* eslint-disable global-require */
 import './CreateNote.css';
-import { useState } from 'react';
-import { collection, addDoc } from 'firebase/firestore';
-import { Link, useNavigate } from 'react-router-dom';
-import { db } from '../../firebase/firebaseConfig';
+import { Link } from 'react-router-dom';
+import useForm from '../../Hooks/FormLogin';
 
 function CreateNote() {
-  const navigate = useNavigate();
-  const [values, setValues] = useState({});
-
-  const handleChange = (event) => {
-    event.persist();
-
-    const { name } = event.target;
-    const val = event.target.value;
-
-    setValues({
-      ...values,
-      [name]: val,
-    });
-  };
-
-  const submit = async () => {
-    try {
-      await addDoc(collection(db, 'notes'), {
-        title: values.title,
-        content: values.content,
-      });
-    } catch (e) {
-      console.error('Error adding document: ', e);
-    }
-    console.log(values);
-    navigate('/home');
-  };
+  const { handleChange, submit } = useForm();
   return (
     <div className="new-note">
       <Link to="/home" style={{ textDecoration: 'none' }}>

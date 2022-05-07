@@ -14,10 +14,10 @@ function ButtonGoogle() {
     <div className="container-button-login">
       <img
         className="logoGoogle"
-        src={require('../../images/logoGoogle.png')}
+        src="../../images/logoGoogle.png"
         alt="logo of Google"
       />
-      <button className="button-Login-Google" onClick={handleGoogle}>
+      <button className="button-Login-Google" type="submit" onClick={handleGoogle}>
         Inicia sesion con Google
       </button>
     </div>

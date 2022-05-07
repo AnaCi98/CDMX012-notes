@@ -3,6 +3,7 @@
 import {
   createContext, useContext, useEffect, useState,
 } from 'react';
+import { act } from 'react-dom/test-utils';
 import {
   GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut,
 } from 'firebase/auth';
@@ -30,7 +31,9 @@ export function AuthProvider({ children }) {
   useEffect(() => {
     const onSubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
-      setLoading(false);
+      act(() => {
+        setLoading(false);
+      });
     });
 
     return () => onSubscribe();

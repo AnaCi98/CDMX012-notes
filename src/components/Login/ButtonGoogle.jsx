@@ -1,9 +1,9 @@
+/* eslint-disable react/prop-types */
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../../context/authContext';
 
-function ButtonGoogle() {
+function ButtonGoogle(props) {
   const navigate = useNavigate();
-  const { loginGoogle } = useAuth();
+  const { loginGoogle } = props;
 
   const handleGoogle = async () => {
     await loginGoogle();

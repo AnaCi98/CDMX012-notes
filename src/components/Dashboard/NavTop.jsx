@@ -1,14 +1,15 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable no-undef */
 /* eslint-disable global-require */
 import { useState } from 'react';
 import './NavTop.css';
-import { useAuth } from '../../context/authContext';
+// import { useAuth } from '../../context/authContext';
 import UserData from './UserData';
 
-export default function NavTop() {
-  const { getOutSession, user } = useAuth();
+export default function NavTop(props) {
+  const { user, getOutSession } = props;
   const [data, setData] = useState(false);
   const closeData = () => {
     setData(false);

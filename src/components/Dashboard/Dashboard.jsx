@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable global-require */
@@ -8,10 +9,11 @@ import NavTop from './NavTop';
 
 // import { Link } from 'react-router-dom';
 
-function Dashboard() {
+function Dashboard(props) {
+  const { user, getOutSession } = props;
   return (
     <div className="container-home">
-      <NavTop />
+      <NavTop user={user} getOutSession={getOutSession} />
       <Link to="/note" style={{ textDecoration: 'none' }}>
         <div className="create-note">
           <p className="addNote">

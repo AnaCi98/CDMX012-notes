@@ -18,6 +18,7 @@
         padding-top: 4%;
         padding-bottom: 4%;
         cursor: pointer;
+        word-wrap: break-word;
     }
 .tittle{
     border: none;
@@ -43,9 +44,6 @@
 }
 .colorNote{
     width: 6vh;
-}
-.deleteNote{
-    width: 6vh; 
 }
 .sendNote{
     position: relative;

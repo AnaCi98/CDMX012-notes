@@ -41,8 +41,8 @@ function Notes(props) {
   return (
     <section className="allNotes">
       {notes.map((note) => (
-        <Link to={`/editnote${note.id}`} style={{ textDecoration: 'none' }}>
-          <div key={note.id} className="notes">
+        <Link key={note.id} to={`/editnote${note.id}`} style={{ textDecoration: 'none' }}>
+          <div className="notes">
             <div className="navTitle">
               <p className="fontTitle">{note.title}</p>
             </div>

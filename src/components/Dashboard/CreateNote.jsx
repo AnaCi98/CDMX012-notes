@@ -6,6 +6,7 @@ import useForm from '../../Hooks/FormLogin';
 
 function CreateNote() {
   const { handleChange, submit } = useForm();
+
   return (
     <div className="new-note">
       <Link to="/" style={{ textDecoration: 'none' }}>

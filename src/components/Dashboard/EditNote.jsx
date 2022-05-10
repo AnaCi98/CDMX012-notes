@@ -7,6 +7,8 @@ import {
   updateDoc, doc, getDoc, deleteDoc,
 } from 'firebase/firestore';
 import { db } from '../../firebase/firebaseConfig';
+import './EditNote.css';
+import './CreateNote.css';
 
 export default function EditNotes() {
   const { id } = useParams();
@@ -34,11 +36,17 @@ export default function EditNotes() {
 
   const editDoc = async (idPost) => {
     const docRef = doc(db, 'notes', idPost);
+    const newToday = new Date(Date.now());
+    const newTodayShort = newToday.toLocaleDateString();
+    const newTodayHour = newToday.getHours().toString();
+    const newTodayMinutes = newToday.getMinutes().toString();
     await updateDoc(docRef, {
       title: values.title,
       content: values.content,
+      date: newTodayShort,
+      dateHour: `${newTodayHour}:${newTodayMinutes}`,
     });
-    navigate('/home');
+    navigate('/');
   };
 
   const deleteNote = async (idPost) => {
@@ -53,7 +61,7 @@ export default function EditNotes() {
   return (
     <div className="new-note">
       {docdata.map((data) => (
-        <>
+        <div>
           <Link to="/" style={{ textDecoration: 'none' }}>
             <img
               className="arrowBack"
@@ -61,9 +69,11 @@ export default function EditNotes() {
               alt="logo of arrow back"
             />
           </Link>
-          <input type="text" className="tittle" name="title" placeholder="Título" defaultValue={data.title} onChange={handleChange} />
-          <input type="text" className="noteContent" name="content" placeholder="Escribe tu nota aqui" defaultValue={data.content} onChange={handleChange} />
-          <div className="icons">
+          <div className="containerNoteContent">
+            <input type="text" className="tittle" name="title" placeholder="Título" defaultValue={data.title} onChange={handleChange} />
+            <input type="text" className="noteContent" name="content" placeholder="Escribe tu nota aqui" defaultValue={data.content} onChange={handleChange} />
+          </div>
+          <div className="iconsEdit">
             <img
               className="newImage"
               src={require('../../images/newImage.png')}
@@ -80,9 +90,14 @@ export default function EditNotes() {
               src={require('../../images/deleteNote.png')}
               alt="icon of erase"
             />
+            <p className="date">
+              {data.date}
+              {' '}
+              {data.dateHour}
+            </p>
             <button
               type="submit"
-              className="sendNote"
+              className="sendNoteEdit"
               onClick={() => {
                 editDoc(id);
               }}
@@ -94,8 +109,7 @@ export default function EditNotes() {
               />
             </button>
           </div>
-
-        </>
+        </div>
       ))}
     </div>
   );

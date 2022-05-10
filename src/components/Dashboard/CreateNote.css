@@ -40,14 +40,14 @@
     column-gap: 20px;
 }
 .newImage{
-    width: 6vh;
+    width: 5vh;
 }
 .colorNote{
-    width: 6vh;
+    width: 5vh;
 }
 .sendNote{
     position: relative;
-    left: 40%;
+    left: 33vh;
     width: 8vh; 
     background-color: #EBD5EE;
     border: none;

@@ -27,7 +27,7 @@ function Dashboard(props) {
           /> */}
         </div>
       </Link>
-      <Notes />
+      <Notes user={user} />
     </div>
   );
 }

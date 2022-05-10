@@ -8,7 +8,7 @@ function CreateNote() {
   const { handleChange, submit } = useForm();
   return (
     <div className="new-note">
-      <Link to="/home" style={{ textDecoration: 'none' }}>
+      <Link to="/" style={{ textDecoration: 'none' }}>
         <img
           className="arrowBack"
           src={require('../../images/arrowBack.png')}

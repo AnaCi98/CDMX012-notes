@@ -20,7 +20,7 @@ const useForm = () => {
   };
   const submit = async () => {
     createNote(values);
-    navigate('/home');
+    navigate('/');
   };
 
   return {

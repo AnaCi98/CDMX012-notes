@@ -10,7 +10,7 @@ import Paths from './Paths';
 function App() {
   const [user, setUser] = useState(null);
   onAuthStateChanged(auth, (currentUser) => {
-    if (currentUser) { setUser(currentUser); }
+    if (currentUser) { setUser(currentUser); } else { setUser(null); }
   });
 
   const loginGoogle = () => {

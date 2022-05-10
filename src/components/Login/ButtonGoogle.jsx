@@ -1,13 +1,10 @@
 /* eslint-disable react/prop-types */
-import { useNavigate } from 'react-router-dom';
 
 function ButtonGoogle(props) {
-  const navigate = useNavigate();
   const { loginGoogle } = props;
 
   const handleGoogle = async () => {
     await loginGoogle();
-    navigate('/home');
   };
 
   return (

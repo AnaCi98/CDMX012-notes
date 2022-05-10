@@ -9,20 +9,22 @@ import EditNotes from './components/Dashboard/EditNote';
 
 function Paths(props) {
   const { user, loginGoogle, getOutSession } = props;
-  if (!user) {
-    return (
+  return (user
+    ? (
+      <Routes>
+        <Route path="/" element={<Dashboard user={user} getOutSession={getOutSession} />} />
+        <Route path="/note" element={<CreateNote />} />
+        <Route path="/editnote:id" element={<EditNotes />} />
+      </Routes>
+    )
+    : (
       <Routes>
         <Route path="/" element={<Login loginGoogle={loginGoogle} />} />
+        <Route path="*" element={<Login loginGoogle={loginGoogle} />} />
         <Route path="/register" element={<Register />} />
       </Routes>
-    );
-  }
-  return (
-    <Routes>
-      <Route path="/home" element={<Dashboard user={user} getOutSession={getOutSession} />} />
-      <Route path="/note" element={<CreateNote />} />
-      <Route path="/editnote:id" element={<EditNotes />} />
-    </Routes>
+
+    )
   );
 }
 

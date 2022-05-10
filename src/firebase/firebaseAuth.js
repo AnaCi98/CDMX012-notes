@@ -1,14 +1,19 @@
 import { collection, addDoc } from 'firebase/firestore';
-import { db } from './firebaseConfig';
+import { db, auth } from './firebaseConfig';
 
 const createNote = async (values) => {
-  try {
-    await addDoc(collection(db, 'notes'), {
-      title: values.title,
-      content: values.content,
-    });
-  } catch (e) {
-    console.error('Error adding document: ', e);
+  const users = auth.currentUser;
+  const UID = users.uid;
+  if (users) {
+    try {
+      await addDoc(collection(db, 'notes'), {
+        title: values.title,
+        content: values.content,
+        UserUID: UID,
+      });
+    } catch (e) {
+      console.error('Error adding document: ', e);
+    }
   }
 };
 export default createNote;

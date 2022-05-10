@@ -1,3 +1,6 @@
+/* eslint-disable array-callback-return */
+/* eslint-disable consistent-return */
+/* eslint-disable react/prop-types */
 /* eslint-disable react/no-children-prop */
 /* eslint-disable global-require */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
@@ -13,7 +16,8 @@ import {
 import { db } from '../../firebase/firebaseConfig';
 // import EditNotes from './EditNote';
 
-function Notes() {
+function Notes(props) {
+  const { user } = props;
   const [notes, setNotes] = useState([]);
 
   const renderNotes = () => {
@@ -21,7 +25,9 @@ function Notes() {
     const q = query(collection(db, 'notes'));
     onSnapshot(q, (querySnapshot) => {
       querySnapshot.forEach((docs) => {
-        arrayNotes.push({ ...docs.data(), id: docs.id });
+        if (docs.data().UserUID === user.uid) {
+          arrayNotes.push({ ...docs.data(), id: docs.id });
+        }
       });
       setNotes(arrayNotes);
     });
@@ -31,6 +37,7 @@ function Notes() {
     renderNotes();
   }, []);
   console.count('componente Note');
+
   return (
     <section className="allNotes">
       {notes.map((note) => (
@@ -43,7 +50,6 @@ function Notes() {
           </div>
         </Link>
       ))}
-      {/* <Route path="/:id" children={<EditNotes />} /> */}
     </section>
   );
 }

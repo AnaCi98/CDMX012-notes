@@ -54,7 +54,7 @@ export default function EditNotes() {
     <div className="new-note">
       {docdata.map((data) => (
         <>
-          <Link to="/home" style={{ textDecoration: 'none' }}>
+          <Link to="/" style={{ textDecoration: 'none' }}>
             <img
               className="arrowBack"
               src={require('../../images/arrowBack.png')}

@@ -4,8 +4,8 @@
 }
     
     /* TABLET */
-@media screen and (min-width: 750px) {
-.notes{
+@media screen and (min-width: 750px) {      
+.notesYellow{
     margin-top: 5%;
     overflow: auto;
 background-color: #fdfdbd;
@@ -17,6 +17,57 @@ box-shadow: 5px 8px #e0e0e0;
 cursor: pointer;
 word-wrap: break-word;
 line-height : 3vh;
+font-family: 'Inter';
+}
+.notesBlue{
+    margin-top: 5%;
+    overflow: auto;
+background-color: #C6F8FF;
+width: 320px;
+max-height: 400px;
+/* border: 3px inset #ae68baac; */
+/* box-shadow: 0 0 5px 0 #ae68baac; */
+box-shadow: 5px 8px #e0e0e0;
+cursor: pointer;
+word-wrap: break-word;
+line-height : 3vh;
+font-family: 'Inter';
+}
+.notesPurple{
+    margin-top: 5%;
+    overflow: auto;
+background-color: #EBD5EE;;
+width: 320px;
+max-height: 400px;
+box-shadow: 5px 8px #e0e0e0;
+cursor: pointer;
+word-wrap: break-word;
+line-height : 3vh;
+font-family: 'Inter';
+}
+.notesGreen{
+    margin-top: 5%;
+    overflow: auto;
+background-color: #C7FFBD;
+width: 320px;
+max-height: 400px;
+box-shadow: 5px 8px #e0e0e0;
+cursor: pointer;
+word-wrap: break-word;
+line-height : 3vh;
+font-family: 'Inter';
+}
+.notesPink{
+    margin-top: 5%;
+    overflow: auto;
+background-color: #FAD0D0;
+width: 320px;
+max-height: 400px;
+box-shadow: 5px 8px #e0e0e0;
+cursor: pointer;
+word-wrap: break-word;
+line-height : 3vh;
+font-family: 'Inter';
 }
 .allNotes{
     width: 720px;
@@ -27,12 +78,12 @@ line-height : 3vh;
     flex-wrap: wrap;
     flex-direction: row;
     column-gap: 5vh;
+    font-family: Inter;
 }
 .navTitle{
     display: flex;
     flex-direction: row;
     column-gap: 2vh;
-    background-color: #fdfdbd;
     padding-left: 2vh;
 }
 .iconsEdit{

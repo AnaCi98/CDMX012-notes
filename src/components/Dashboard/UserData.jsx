@@ -22,7 +22,7 @@ export default function UserData(props) {
         <img
           onClick={handleSignOut}
           className="logoSignOut"
-          src={require('../../images/signout.png')}
+          src="../../images/signout.png"
           alt="logo of signout"
         />
         <p className="textSignOut">Cerrar sesion</p>

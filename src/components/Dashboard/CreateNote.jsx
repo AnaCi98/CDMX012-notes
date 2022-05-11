@@ -12,7 +12,7 @@ function CreateNote() {
       <Link to="/" style={{ textDecoration: 'none' }}>
         <img
           className="arrowBack"
-          src={require('../../images/arrowBack.png')}
+          src="../../images/arrowBack.png"
           alt="logo of arrow back"
         />
       </Link>
@@ -21,12 +21,12 @@ function CreateNote() {
       <div className="icons">
         <img
           className="newImage"
-          src={require('../../images/newImage.png')}
+          src="../../images/newImage.png"
           alt="logo of new imagen"
         />
         <img
           className="colorNote"
-          src={require('../../images/colorNote.png')}
+          src="../../images/colorNote.png"
           alt="logo of color"
         />
         {/* <img className='deleteNote'
@@ -40,7 +40,7 @@ function CreateNote() {
         >
           <img
             className="sendNoteIcon"
-            src={require('../../images/sendNote.png')}
+            src="../../images/sendNote.png"
             alt="logo of send note"
           />
 

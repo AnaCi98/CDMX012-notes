@@ -12,15 +12,17 @@
         display: flex;
         column-gap: 45vh;
         padding-left: 3.3vh;
-}
+        font-family: Inter;
+    }
  .logoSignOut{
-        margin-top: 4vh;
+        margin-top: 3vh;
         width: 5vh;
         height: 4vh;
 }
  .displayName{
 margin-top: 4vh;
 font-size: 1.3rem;
+font-weight: bold;
 }
 .logoTop{
     margin-top: 2vh;
@@ -47,11 +49,11 @@ width: 500px;
 }
 .textSignOut{
     position: relative;
-    margin-top: 5vh;
+    margin-top: 4vh;
 }
 .userDisplayEmail{
     position: absolute;
-    bottom: 7vh;
+    bottom: 5vh;
 }
 .photoUser{
     margin-top: 3vh;

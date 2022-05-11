@@ -8,7 +8,7 @@
 import './Notes.css';
 import { useEffect, useState } from 'react';
 import {
-  collection, query, onSnapshot,
+  collection, query, onSnapshot, orderBy,
 } from 'firebase/firestore';
 import {
   Link,
@@ -22,7 +22,7 @@ function Notes(props) {
 
   const renderNotes = () => {
     const arrayNotes = [];
-    const q = query(collection(db, 'notes'));
+    const q = query(collection(db, 'notes'), orderBy('dateSeconds', 'desc'));
     onSnapshot(q, (querySnapshot) => {
       querySnapshot.forEach((docs) => {
         if (docs.data().UserUID === user.uid) {
@@ -42,7 +42,7 @@ function Notes(props) {
     <section className="allNotes">
       {notes.map((note) => (
         <Link key={note.id} to={`/editnote${note.id}`} style={{ textDecoration: 'none' }}>
-          <div className="notes">
+          <div className={`notes${note.color}`}>
             <div className="navTitle">
               <p className="fontTitle">{note.title}</p>
             </div>

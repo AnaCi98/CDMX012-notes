@@ -1,3 +1,6 @@
+/* eslint-disable react/button-has-type */
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable react/no-this-in-sfc */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable global-require */
@@ -15,6 +18,7 @@ export default function EditNotes() {
   const navigate = useNavigate();
   const [docdata, setDocdata] = useState([]);
   const [values, setValues] = useState({});
+  const [colored, setColor] = useState();
   const handleChange = (event) => {
     event.persist();
 
@@ -25,6 +29,10 @@ export default function EditNotes() {
       ...values,
       [name]: val,
     });
+  };
+
+  const handleChangeColor = (colors) => {
+    setColor(colors);
   };
 
   const readData = async () => {
@@ -40,18 +48,22 @@ export default function EditNotes() {
     const newTodayShort = newToday.toLocaleDateString();
     const newTodayHour = newToday.getHours().toString();
     const newTodayMinutes = newToday.getMinutes().toString();
+    const newTodaySeconds = newToday.getSeconds().toString();
+
     await updateDoc(docRef, {
       title: values.title,
       content: values.content,
       date: newTodayShort,
       dateHour: `${newTodayHour}:${newTodayMinutes}`,
+      dateSeconds: `${newTodayHour}:${newTodayMinutes}:${newTodaySeconds}`,
+      color: colored,
     });
     navigate('/');
   };
 
   const deleteNote = async (idPost) => {
     await deleteDoc(doc(db, 'notes', idPost));
-    navigate('/home');
+    navigate('/');
   };
 
   useEffect(() => {
@@ -59,13 +71,13 @@ export default function EditNotes() {
   }, []);
   // if (!docSnap) return null;
   return (
-    <div className="new-note">
+    <div id="newNote" className="new-note">
       {docdata.map((data) => (
         <div>
           <Link to="/" style={{ textDecoration: 'none' }}>
             <img
               className="arrowBack"
-              src={require('../../images/arrowBack.png')}
+              src="../../images/arrowBack.png"
               alt="logo of arrow back"
             />
           </Link>
@@ -73,21 +85,28 @@ export default function EditNotes() {
             <input type="text" className="tittle" name="title" placeholder="Título" defaultValue={data.title} onChange={handleChange} />
             <input type="text" className="noteContent" name="content" placeholder="Escribe tu nota aqui" defaultValue={data.content} onChange={handleChange} />
           </div>
+          <div className="ButtonsColors">
+            <button name="color" className="purpleButton" onClick={() => handleChangeColor('Purple')}> </button>
+            <button name="color" className="yellowButton" onClick={() => handleChangeColor('Yellow')}> </button>
+            <button name="color" className="greenButton" onClick={() => handleChangeColor('Green')}> </button>
+            <button name="color" className="blueButton" onClick={() => handleChangeColor('Blue')}> </button>
+            <button name="color" className="pinkButton" onClick={() => handleChangeColor('Pink')}> </button>
+          </div>
           <div className="iconsEdit">
             <img
               className="newImage"
-              src={require('../../images/newImage.png')}
+              src="../../images/newImage.png"
               alt="logo of new imagen"
             />
             <img
               className="colorNote"
-              src={require('../../images/colorNote.png')}
+              src="../../images/colorNote.png"
               alt="logo of color"
             />
             <img
               onClick={() => { deleteNote(id); }}
               className="deleteIcon"
-              src={require('../../images/deleteNote.png')}
+              src="../../images/deleteNote.png"
               alt="icon of erase"
             />
             <p className="date">
@@ -104,7 +123,7 @@ export default function EditNotes() {
             >
               <img
                 className="sendNoteIcon"
-                src={require('../../images/sendNote.png')}
+                src="../../images/sendNote.png"
                 alt="logo of send note"
               />
             </button>

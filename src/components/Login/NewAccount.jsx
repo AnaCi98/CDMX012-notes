@@ -7,7 +7,6 @@ function NewAccount() {
       <Link to="/register" style={{ textDecoration: 'none' }}>
         <p className="p-send-view-register">Registrate</p>
       </Link>
-
     </div>
   );
 }

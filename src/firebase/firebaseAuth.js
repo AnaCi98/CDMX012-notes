@@ -8,6 +8,7 @@ const createNote = async (values) => {
   const todayShort = today.toLocaleDateString();
   const todayHour = today.getHours().toString();
   const todayMinutes = today.getMinutes().toString();
+  const todaySeconds = today.getSeconds().toString();
 
   console.log(`${todayHour}:${todayMinutes}`);
   // console.log('Ana' + {todayHour.toString()}, todayMinutes.toString());
@@ -19,6 +20,8 @@ const createNote = async (values) => {
         UserUID: UID,
         date: todayShort,
         dateHour: `${todayHour}:${todayMinutes}`,
+        dateSeconds: `${todayHour}:${todayMinutes}:${todaySeconds}`,
+        color: 'Yellow',
       });
     } catch (e) {
       console.error('Error adding document: ', e);

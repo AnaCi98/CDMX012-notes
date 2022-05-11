@@ -21,7 +21,7 @@ export default function NavTop(props) {
       <UserData data={data} closeData={closeData} getOutSession={getOutSession} user={user} />
       <img
         className="logoTop"
-        src={require('../../images/logo.png')}
+        src="../../images/logo.png"
         alt="logo of take notes"
       />
       <img

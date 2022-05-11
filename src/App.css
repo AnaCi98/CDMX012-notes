@@ -6,7 +6,6 @@
 .button-register{
   background-color: #995fc0d7;
   color: white ;
-  font-family: inter;
   font-size: 1.08rem;
   padding-left: 10px;
   padding-right: 10px;
@@ -42,6 +41,7 @@
     margin-top: 0px;
     margin-bottom: 0px;
     padding: 0px;
+    font-family: Inter;
   }
   .logoTK{
     width: 25vh;
@@ -49,7 +49,6 @@
   .button-register{
     background-color: #995fc0d7;
     color: white ;
-    font-family: inter;
     font-size: 1.08rem;
     padding-left: 10px;
     padding-right: 10px;
@@ -87,7 +86,6 @@
   .button-register{
     background-color: #995fc0d7;
     color: white ;
-    font-family: inter;
     font-size: 1.08rem;
     padding-left: 10px;
     padding-right: 10px;

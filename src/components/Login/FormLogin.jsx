@@ -1,3 +1,4 @@
+/* eslint-disable react/button-has-type */
 function FormLogin() {
   return (
     <div className="form-login">
